@@ -24,7 +24,6 @@ for (let index = 0; index < 6; index++) {
     }
     strip.showColor(neopixel.colors(NeoPixelColors.Yellow))
     nivå += 1
-    settRadiogruppeNivå()
 }
 function settRadiogruppeNivå () {
     if (nivå == 1) {
@@ -32,7 +31,7 @@ function settRadiogruppeNivå () {
     } else if (nivå == 2) {
         radio.setGroup(radioNivå2)
     } else if (nivå == 3) {
-        radio.setGroup(radioNivå2)
+        radio.setGroup(radioNivå3)
     } else if (nivå == 4) {
         radio.setGroup(radioNivå4)
     } else if (nivå == 5) {
@@ -71,6 +70,7 @@ radio.onReceivedString(function (receivedString) {
     } else {
         nivåFeilet()
     }
+    settRadiogruppeNivå()
 })
 input.onButtonPressed(Button.B, function () {
     nivå += 1
@@ -89,7 +89,6 @@ for (let index = 0; index < 6; index++) {
         basic.pause(200)
     }
     strip.showColor(neopixel.colors(NeoPixelColors.Yellow))
-    settRadiogruppeNivå()
 }
 let kodeord5 = ""
 let kodeord4 = ""
